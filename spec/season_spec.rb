@@ -30,24 +30,32 @@ RSpec.describe Season do
     expect(@season.games.sample).to be_a(Game)
   end
 
-  it "can generate team stats" do
+  it "has game teams stats" do
     expect(@season.game_teams).to be_an(Array)
-    expect(@season.game_teams[0]).to be_a(GameTeam)
+    expect(@season.game_teams.sample).to be_a(GameTeam)
   end
 
   it "can keep track of all game ids" do
-    expect(@season.game_ids).to be_an(Array)
     expect(@season.game_ids).to eq(["2012030221", "2012030222", "2012030223", "2012030224", "2012030225", "2012030311", "2012030312", "2012030313", "2012030314", "2012020225", "2012020510"]) 
   end
 
-  it "can generate unique team ids" do
-    expect(@season.generate_team_ids).to be_an(Array)
+  it "can track unique team ids" do
     expect(@season.team_ids).to eq(["6", "3", "5", "24", "29", "30", "26"])
   end
 
-  it "can generate new teams" do
-    expect(@season.teams[0]).to be_a(Team)
+  it "has teams" do
     expect(@season.teams).to be_an(Array)
+    expect(@season.teams.sample).to be_a(Team)
     expect(@season.teams.first.team_name).to eq("Atlanta United")
   end 
+
+  it "has tackle data" do
+    expect(@season.team_tackles).to be_a(Hash)
+    expected = {
+      "3" => 179,
+      "5" => 150,
+      "6" => 271
+    }
+    expect(@season.team_tackles).to eq(expected)
+  end
 end
