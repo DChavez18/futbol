@@ -16,7 +16,7 @@ class Season
     @game_teams = generate_game_teams(game_team_file)
     @team_ids = generate_team_ids
     @teams = generate_teams(team_data)
-    @team_tackles = tackle_data
+    @team_tackles = generate_tackle_data
   end
 
   def generate_games(game_file)
@@ -73,7 +73,7 @@ class Season
     @teams = teams
   end
 
-  def tackle_data
+  def generate_tackle_data
     team_tackles = Hash.new(0)
     @game_teams.each do |game_team|
         team_id = game_team.team_id
