@@ -42,7 +42,7 @@ RSpec.describe Season do
 
   it "can generate unique team ids" do
     expect(@season.generate_team_ids).to be_an(Array)
-    expect(@season.team_ids).to eq(["3", "6", "5", "29", "24", "26", "30"])
+    expect(@season.team_ids).to eq(["6", "3", "5", "24", "29", "30", "26"])
   end
 
   it "can generate new teams" do
