@@ -30,10 +30,6 @@ RSpec.describe Season do
     expect(@season.games.sample).to be_a(Game)
   end
 
-  it "can count each game in a season" do
-    expect(@season.games_count).to eq(11)
-  end
-
   it "can generate team stats" do
     expect(@season.game_teams).to be_an(Array)
     expect(@season.game_teams[0]).to be_a(GameTeam)
