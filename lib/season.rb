@@ -73,10 +73,6 @@ class Season
     @teams = teams
   end
 
-  def games_count
-    @games.count
-  end
-
   def tackle_data
     team_tackles = Hash.new(0)
     @game_teams.each do |game_team|
