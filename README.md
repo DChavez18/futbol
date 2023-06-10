@@ -2,11 +2,11 @@
 
 ## Table of Contents
   - [Check-ins](#check-ins)
-  - [Approach To Code Design](#plan-for-project-organization)
-  - [Organization](#approaches-to-project-organization)
+  - [Organization](#plan-for-project-organization)
+  - [Approach To Code Design](#approach-to-code-design)
+  - [Retro](#retro)
   - [DTR](#dtrs)
   - [Contributors](#contributors)
-  - [Retro](#retro)
 
 
 ## Check-ins
@@ -50,7 +50,7 @@ What we would do differently:
 ## DTRs
 [Initial DTR, completed June 5th, 2023](https://docs.google.com/document/d/16q8OoEKOcHqu2rHtpYuJDgJG5uh6zXTjz5PvEUf8mHk/edit?usp=sharing) 
 
-   [Updated DTR, completed June 8th, 2023](https://docs.google.com/document/d/1lOCoLH7pUqNNJmmAIsmMe2ZGIiGfHvu5xhDQebHQWkE/edit)
+[Updated DTR, completed June 8th, 2023](https://docs.google.com/document/d/1lOCoLH7pUqNNJmmAIsmMe2ZGIiGfHvu5xhDQebHQWkE/edit)
 
 ## Contributors
 ### Garrett Varenhorst        
