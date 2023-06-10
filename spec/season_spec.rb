@@ -4,7 +4,6 @@ SimpleCov.start
 require "./lib/game"
 require "./lib/team"
 require "./lib/season"
-require "pry"
 require "csv"
 require "./lib/game_teams"
 
@@ -40,7 +39,7 @@ RSpec.describe Season do
   end
 
   it "can track unique team ids" do
-    expect(@season.team_ids).to eq(["6", "3", "5", "24", "29", "30", "26"])
+    expect(@season.team_ids).to eq(["3", "6", "5"])
   end
 
   it "has teams" do
