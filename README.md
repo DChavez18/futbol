@@ -6,9 +6,9 @@
     - [Plan for Project Organization](#plan-for-project-organization)
     - [Approaches to Project Organization](#approaches-to-project-organization)
   - [Approach To Code Design](#approach-to-code-design)
+  - [Retro](#retro)
   - [DTR](#dtrs)
   - [Contributors](#contributors)
-  - [Retro](#retro)
 
 
 ## Check-ins
