@@ -122,7 +122,7 @@ class StatTracker
       team.team_id
     end
   end
-  #move into helper class?
+  
   def offense_helper
     team_average_scores = {}
     @grouped_game_teams.each do |team, games|
@@ -188,7 +188,6 @@ class StatTracker
 
   def coach_stats(season)
     coach_data = find_season(season).game_teams.group_by {|game| game.head_coach}
-    # require 'pry'; binding.pry
     coach_percentages = {}
     coach_data.each do |coach, games|
       wins = games.count { |game| game.result == "WIN" }
