@@ -7,7 +7,8 @@ class Season
               :game_ids,
               :team_ids,
               :teams,
-              :team_tackles
+              :team_tackles,
+              :team_accuracy
 
   def initialize(game_file, game_team_file, season, team_data)
     @season = season
@@ -17,6 +18,7 @@ class Season
     @team_ids = generate_team_ids
     @teams = generate_teams(team_data)
     @team_tackles = generate_tackle_data
+    @team_accuracy = generate_accuracy_data
   end
 
   def generate_games(game_file)
@@ -76,5 +78,16 @@ class Season
       team_tackles[team_id] += tackles
     end
     @team_tackles = team_tackles
+  end
+
+  def generate_accuracy_data
+    team_games = @game_teams.group_by { |game_team| game_team.team_id }
+    team_accuracy = {}
+    team_games.each do |team_id, games|
+      accuracy_by_game = games.map { |game| game.accuracy }
+      overall_accuracy = accuracy_by_game.sum.to_f / accuracy_by_game.length
+      team_accuracy[team_id] = overall_accuracy
+    end
+    @team_accuracy = team_accuracy
   end
 end
