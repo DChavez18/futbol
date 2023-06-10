@@ -3,7 +3,7 @@
 ## Table of Contents
   - [Check-ins](#check-ins)
   - [Organization](#plan-for-project-organization)
-  - [Approach To Project Organization & Code Design](#approach-to-code-design)
+  - [Approaches To Project Organization & Code Design](#approach-to-code-design)
   - [Retro](#retro)
   - [DTR](#dtrs)
   - [Contributors](#contributors)
