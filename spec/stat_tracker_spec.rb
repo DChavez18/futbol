@@ -26,15 +26,24 @@ RSpec.describe StatTracker do
   end
 
   it "can create games in an array" do
+    games_array = @stat_tracker.create_games("./data/games_sampl.csv")
+    first_game = games_array.first
     expect(@stat_tracker.create_games("./data/games_sampl.csv")).to be_a Array
+    expect(first_game.game_id).to eq("2012030221")
   end
 
   it "can create teams in an array" do
+    teams_array = @stat_tracker.create_teams("./data/teams_sampl.csv")
+    first_team = teams_array.first
     expect(@stat_tracker.create_teams("./data/teams_sampl.csv")).to be_a Array
+    expect(first_team.team_name).to eq("Atlanta United")
   end
 
   it "can create game teams in an array" do
+    game_teams_array = @stat_tracker.create_game_teams("./data/game_teams_sampl.csv")
+    first_game_teams = game_teams_array.first
     expect(@stat_tracker.create_game_teams("./data/game_teams_sampl.csv")).to be_a Array
+    expect(first_game_teams.team_id).to eq("3")
   end
 
   it "can calculate the highest total score of all games" do
