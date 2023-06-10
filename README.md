@@ -48,7 +48,9 @@ What we would do differently:
 [back to top](#table-of-contents)
 
 ## DTRs
-[Initial DTR, completed June 5th, 2023](https://docs.google.com/document/d/1lOCoLH7pUqNNJmmAIsmMe2ZGIiGfHvu5xhDQebHQWkE/edit)[Updated DTR, completed June 8th, 2023](select File, select version history))
+[Initial DTR, completed June 5th, 2023](https://docs.google.com/document/d/16q8OoEKOcHqu2rHtpYuJDgJG5uh6zXTjz5PvEUf8mHk/edit?usp=sharing) 
+
+   [Updated DTR, completed June 8th, 2023](https://docs.google.com/document/d/1lOCoLH7pUqNNJmmAIsmMe2ZGIiGfHvu5xhDQebHQWkE/edit)
 
 ## Contributors
 ### Garrett Varenhorst        
