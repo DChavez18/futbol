@@ -84,9 +84,10 @@ class Season
     team_games = @game_teams.group_by { |game_team| game_team.team_id }
     team_accuracy = {}
     team_games.each do |team_id, games|
-      accuracy_by_game = games.map { |game| game.accuracy }
-      overall_accuracy = accuracy_by_game.sum.to_f / accuracy_by_game.length
-      team_accuracy[team_id] = overall_accuracy
+      shots = games.map { |game| game.shots }
+      goals = games.map { |game| game.goals }
+      accuracy = goals.sum / shots.sum.to_f
+      team_accuracy[team_id] = accuracy
     end
     @team_accuracy = team_accuracy
   end
