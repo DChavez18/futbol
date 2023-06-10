@@ -3,7 +3,7 @@
 ## Table of Contents
   - [Check-ins](#check-ins)
   - [Organization](#plan-for-project-organization)
-  - [Approach To Code Design](#approach-to-code-design)
+  - [Approach To Project Organization & Code Design](#approach-to-code-design)
   - [Retro](#retro)
   - [DTR](#dtrs)
   - [Contributors](#contributors)
@@ -21,8 +21,6 @@
 - Building classes to organize data/hold state of objects, then methods to call/process that data
 - Mostly async, with pair/group when dealing with unproductive struggle 
 - Require 2 reviewers per pull request before merging to main 
-
-[back to top](#table-of-contents)
 
 ## Approaches to project organization
 We had a repeater in our group and we listened to his input on how his team previously used Miro board/GitHub projects. We were all more familiar with both GitHub and Miro board above the other options, too, and so went with the familiar. 
@@ -44,8 +42,6 @@ What we would do differently:
 - Swap/Driver Navigator more frequently
 - Spec_Harness should have been added earlier
 
-
-[back to top](#table-of-contents)
 
 ## DTRs
 [Initial DTR, completed June 5th, 2023](https://docs.google.com/document/d/16q8OoEKOcHqu2rHtpYuJDgJG5uh6zXTjz5PvEUf8mHk/edit?usp=sharing) 
