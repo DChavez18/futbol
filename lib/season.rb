@@ -40,26 +40,27 @@ class Season
   
   def generate_game_teams(game_team_file)
     game_teams = []
-    game_lines = CSV.open game_team_file, headers: true, header_converters: :symbol
-    game_lines.each do |line|
-      game_teams << GameTeam.new(line) if @game_ids.include?(line[:game_id])
+    game_teams_lines = CSV.open game_team_file, headers: true, header_converters: :symbol
+    game_teams_lines.each do |line|
+      if @game_ids.include?(line[:game_id])
+        game_teams << GameTeam.new(line)
+      end
     end
     @game_teams = game_teams
   end
       
   def generate_team_ids
     team_ids = []
-    @games.each do |game|
-      team_ids << game.home_team_id
-      team_ids << game.away_team_id
+    @game_teams.each do |game|
+      team_ids << game.team_id
     end
     @team_ids = team_ids.uniq
   end
 
   def generate_teams(team_data)
     teams = []
-    game_lines = CSV.open team_data, headers: true, header_converters: :symbol
-    game_lines.each do |line|
+    team_lines = CSV.open team_data, headers: true, header_converters: :symbol
+    team_lines.each do |line|
       if !@team_ids.include?(line[:team_id])
         teams << Team.new(line)
       end
