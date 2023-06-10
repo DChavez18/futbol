@@ -99,22 +99,18 @@ RSpec.describe StatTracker do
   end
 
   it "has a most accurate team" do
-    #Name of the Team with the best ratio of shots to goals for the season	
     expect(@stat_tracker.most_accurate_team("20122013")).to eq("FC Dallas")
   end
 
   it "has a least accurate team" do
-    #Name of the Team with the worst ratio of shots to goals for the season	
     expect(@stat_tracker.least_accurate_team("20122013")).to eq("Sporting Kansas City")
   end
 
   it "has a team with most tackles" do
-    # Name of the Team with the most tackles in the season	
     expect(@stat_tracker.most_tackles("20122013")).to eq("FC Dallas")
   end
 
   it "has a team with fewest tackles" do
-    #Name of the Team with the fewest tackles in the season	
     expect(@stat_tracker.fewest_tackles("20122013")).to eq("Sporting Kansas City")
   end
 end
