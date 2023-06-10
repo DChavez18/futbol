@@ -48,13 +48,22 @@ RSpec.describe Season do
     expect(@season.teams.first.team_name).to eq("Atlanta United")
   end 
 
-  it "has tackle data" do
-    expect(@season.team_tackles).to be_a(Hash)
+  it "has tackle data by team id" do
     expected = {
       "3" => 179,
       "5" => 150,
       "6" => 271
     }
     expect(@season.team_tackles).to eq(expected)
+  end
+
+  it "has team accuracy data by team id" do
+    expect(@season.team_accuracy).to be_a(Hash)
+    expected = {
+      "3" => 0.20634920634920634,
+      "5" => 0.060897435897435896,
+      "6" => 0.32407407407407407
+    }
+    expect(@season.team_accuracy).to eq(expected)
   end
 end
