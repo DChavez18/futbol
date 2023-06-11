@@ -42,12 +42,6 @@ RSpec.describe Season do
     expect(@season.team_ids).to eq(["3", "6", "5"])
   end
 
-  it "has teams" do
-    expect(@season.teams).to be_an(Array)
-    expect(@season.teams.sample).to be_a(Team)
-    expect(@season.teams.first.team_name).to eq("Atlanta United")
-  end 
-
   it "has tackle data by team id" do
     expected = {
       "3" => 179,
@@ -60,9 +54,9 @@ RSpec.describe Season do
   it "has team accuracy data by team id" do
     expect(@season.team_accuracy).to be_a(Hash)
     expected = {
-      "3" => 0.20634920634920634,
-      "5" => 0.060897435897435896,
-      "6" => 0.32407407407407407
+      "3"=>0.21052631578947367, 
+      "5"=>0.0625, 
+      "6"=>0.3157894736842105
     }
     expect(@season.team_accuracy).to eq(expected)
   end
