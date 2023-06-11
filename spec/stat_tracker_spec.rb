@@ -46,6 +46,28 @@ RSpec.describe StatTracker do
     expect(first_game_teams.team_id).to eq("3")
   end
 
+  it "can create a hash with seasons and games" do
+    expect(@stat_tracker.create_season_games_hash).to be_a Hash
+    expect(@stat_tracker.create_season_games_hash.keys.first).to eq("20122013")
+  end
+
+  it "can create seasons in an array" do
+
+    game_path = "./data/games_sampl.csv"
+    teams_path = "./data/teams_sampl.csv"
+    game_teams_path = "./data/game_teams_sampl.csv"
+    locations = {
+      games: game_path,
+      teams: teams_path,
+      game_teams: game_teams_path
+    }
+    seasons_array = @stat_tracker.create_seasons(locations)
+    first_season = seasons_array.first
+
+    expect(seasons_array).to be_a Array
+    expect(first_season.season).to eq("20122013")
+  end
+
   it "can calculate the highest total score of all games" do
     expect(@stat_tracker.highest_total_score).to eq(6)
   end
@@ -93,6 +115,12 @@ RSpec.describe StatTracker do
 
   it "can report team with worst offense" do
     expect(@stat_tracker.worst_offense).to eq("Sporting Kansas City")
+  end
+
+  it "can make a hash of scores" do
+    expect(@stat_tracker.scoring_helper_method("home")).to be_a Hash
+    expect(@stat_tracker.scoring_helper_method("home").keys.first).to eq("3")
+    expect(@stat_tracker.scoring_helper_method("home").values.first.round(2)).to eq(1.33)
   end
 
   it "can report highest scoring visitor" do	
