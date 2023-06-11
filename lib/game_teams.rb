@@ -18,8 +18,4 @@ class GameTeam
     @shots = game_team_data[:shots].to_i
     @tackles = game_team_data[:tackles].to_i
   end
-
-  def accuracy
-    @goals.to_f / @shots
-  end
 end
