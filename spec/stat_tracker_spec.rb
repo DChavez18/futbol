@@ -51,6 +51,23 @@ RSpec.describe StatTracker do
     expect(@stat_tracker.create_season_games_hash.keys.first).to eq("20122013")
   end
 
+  it "can create seasons in an array" do
+
+    game_path = "./data/games_sampl.csv"
+    teams_path = "./data/teams_sampl.csv"
+    game_teams_path = "./data/game_teams_sampl.csv"
+    locations = {
+      games: game_path,
+      teams: teams_path,
+      game_teams: game_teams_path
+    }
+    seasons_array = @stat_tracker.create_seasons(locations)
+    first_season = seasons_array.first
+
+    expect(seasons_array).to be_a Array
+    expect(first_season.season).to eq("20122013")
+  end
+
   it "can calculate the highest total score of all games" do
     expect(@stat_tracker.highest_total_score).to eq(6)
   end
