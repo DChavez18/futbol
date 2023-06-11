@@ -117,6 +117,12 @@ RSpec.describe StatTracker do
     expect(@stat_tracker.worst_offense).to eq("Sporting Kansas City")
   end
 
+  it "can make a hash of scores" do
+    expect(@stat_tracker.scoring_helper_method("home")).to be_a Hash
+    expect(@stat_tracker.scoring_helper_method("home").keys.first).to eq("3")
+    expect(@stat_tracker.scoring_helper_method("home").values.first.round(2)).to eq(1.33)
+  end
+
   it "can report highest scoring visitor" do	
     expect(@stat_tracker.highest_scoring_visitor).to eq("FC Dallas")
   end
