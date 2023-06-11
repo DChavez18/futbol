@@ -46,6 +46,11 @@ RSpec.describe StatTracker do
     expect(first_game_teams.team_id).to eq("3")
   end
 
+  it "can create a hash with seasons and games" do
+    expect(@stat_tracker.create_season_games_hash).to be_a Hash
+    expect(@stat_tracker.create_season_games_hash.keys.first).to eq("20122013")
+  end
+
   it "can calculate the highest total score of all games" do
     expect(@stat_tracker.highest_total_score).to eq(6)
   end
