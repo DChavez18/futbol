@@ -6,7 +6,6 @@ class Season
               :game_teams,
               :game_ids,
               :team_ids,
-              :teams,
               :team_tackles,
               :team_accuracy
 
@@ -16,7 +15,6 @@ class Season
     @game_ids = generate_game_ids
     @game_teams = generate_game_teams(game_team_file)
     @team_ids = generate_team_ids
-    @teams = generate_teams(team_data)
     @team_tackles = generate_tackle_data
     @team_accuracy = generate_accuracy_data
   end
@@ -57,17 +55,6 @@ class Season
       team_ids << game.team_id
     end
     @team_ids = team_ids.uniq
-  end
-
-  def generate_teams(team_data)
-    teams = []
-    team_lines = CSV.open team_data, headers: true, header_converters: :symbol
-    team_lines.each do |line|
-      if !@team_ids.include?(line[:team_id])
-        teams << Team.new(line)
-      end
-    end
-    @teams = teams
   end
 
   def generate_tackle_data
