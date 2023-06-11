@@ -106,7 +106,7 @@ class StatTracker
   def average_goals_by_season
     goal_count = {}
     @season_games.each do |season, games|
-      averaged_goals = games.map {|game| game.goals_averaged}
+      averaged_goals = games.map {|game| game.total_goals}
       combined_average = (averaged_goals.sum.to_f/averaged_goals.count).round(2)
       goal_count[season] = combined_average
     end
@@ -214,30 +214,20 @@ class StatTracker
   end
 
   def most_accurate_team(season)
-    id_hash = find_season(season).game_teams.group_by { |game_team_object| game_team_object.team_id }
-    team_percentages = {}
-    id_hash.each do |team_id, games_array|
-      team_accuracy = games_array.map { |game_team_object| game_team_object.accuracy }
-      accurate_percentage = team_accuracy.sum.to_f / team_accuracy.length
-      team_percentages[team_id] = accurate_percentage
-    end
-    top_team_array = team_percentages.max_by {|team_id, percentage| percentage }
+    season_data = find_season(season)
+    team_percentages = season_data.team_accuracy
+    top_team_array = team_percentages.max_by { |team_id, percentage| percentage }
     top_team_id = top_team_array[0]
-    top_team = @teams.find {|team| team.id == top_team_id }
+    top_team = @teams.find { |team| team.id == top_team_id }
     top_team.team_name
   end
 
   def least_accurate_team(season)
-    id_hash = find_season(season).game_teams.group_by { |game_team_object| game_team_object.team_id }
-    team_percentages = {}
-    id_hash.each do |team_id, games_array|
-      team_accuracy = games_array.map { |game_team_object| game_team_object.accuracy }
-      accurate_percentage = team_accuracy.sum.to_f / team_accuracy.length
-      team_percentages[team_id] = accurate_percentage
-    end
-    top_team_array = team_percentages.min_by {|team_id, percentage| percentage }
+    season_data = find_season(season)
+    team_percentages = season_data.team_accuracy
+    top_team_array = team_percentages.min_by { |team_id, percentage| percentage }
     top_team_id = top_team_array[0]
-    top_team = @teams.find {|team| team.id == top_team_id }
+    top_team = @teams.find { |team| team.id == top_team_id }
     top_team.team_name
   end
 
